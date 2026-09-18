@@ -1,0 +1,3 @@
+const form = document.querySelector("[data-demo-form]");
+if (form) form.addEventListener("submit", (event) => { event.preventDefault(); const name = form.querySelector("[name=name]")?.value || ""; form.innerHTML = `<div class="confirmation"><h2>Pedido recebido</h2><p>Obrigado${name ? `, ${name}` : ""}. Esta é uma simulação de demonstração e não guardou dados.</p><button class="btn btn-primary" type="button" onclick="location.reload()">Fazer novo pedido</button></div>`; });
+document.querySelectorAll("[data-step-next]").forEach((button) => button.addEventListener("click", () => { const current = button.closest("[data-step]"); current.hidden = true; const next = document.querySelector(`[data-step='${button.dataset.stepNext}']`); if (next) next.hidden = false; }));

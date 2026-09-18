@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin | NayWeb</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin">
+  <main class="container admin-main">
+    <div id="login" class="card contact-form admin-login">
+      <a class="logo" href="index.html">Nay<span>Web</span></a>
+      <h1>Área administrativa</h1>
+      <p>Entra com o email e palavra-passe do Firebase Authentication.</p>
+      <form id="login-form">
+        <div class="field"><label for="admin-email">Email</label><input id="admin-email" type="email" required></div>
+        <div class="field"><label for="admin-password">Palavra-passe</label><input id="admin-password" type="password" required></div>
+        <button class="btn btn-primary" type="submit">Entrar</button>
+      </form>
+      <p id="login-status" class="form-error" role="alert"></p>
+    </div>
+    <div id="app" hidden>
+      <div class="admin-heading"><div><a class="logo" href="index.html">Nay<span>Web</span></a><h1>Admin</h1></div><button id="logout" class="btn btn-secondary" type="button">Sair</button></div>
+      <p id="admin-status" role="status"></p>
+      <nav class="admin-nav" aria-label="Secções administrativas">
+        <button class="btn btn-small" type="button" data-tab="summary">Resumo</button>
+        <button class="btn btn-small" type="button" data-tab="orders-panel">Pedidos</button>
+        <button class="btn btn-small" type="button" data-tab="plan-list">Planos</button>
+        <button class="btn btn-small" type="button" data-tab="charts-panel">Gráficos</button>
+        <button id="seed" class="btn btn-primary btn-small" type="button">Carregar dados iniciais</button>
+      </nav>
+      <section id="summary" class="admin-panel is-active" aria-labelledby="summary-title">
+        <h2 id="summary-title">Resumo</h2>
+        <div class="admin-grid">
+          <div class="card admin-stat"><span>Total de pedidos</span><strong id="summary-total">—</strong></div>
+          <div class="card admin-stat"><span>Pedidos novos</span><strong id="summary-new">—</strong></div>
+          <div class="card admin-stat"><span>Este mês</span><strong id="summary-month">—</strong></div>
+          <div class="card admin-stat"><span>Por plano</span><div id="summary-plans" class="summary-plans">—</div></div>
+        </div>
+      </section>
+      <section id="orders-panel" class="admin-panel" aria-labelledby="orders-title">
+        <h2 id="orders-title">Pedidos</h2>
+        <div class="admin-filters">
+          <div class="field"><label for="order-search">Pesquisar nome ou email</label><input id="order-search" type="search" placeholder="Ex.: Ana ou email@exemplo.pt"></div>
+          <div class="field"><label for="order-status-filter">Filtrar por estado</label><select id="order-status-filter"><option value="todos">Todos</option><option value="novo">Novo</option><option value="contactado">Contactado</option><option value="fechado">Fechado</option><option value="perdido">Perdido</option></select></div>
+        </div>
+        <p id="orders-loading" class="admin-loading" role="status" hidden>A carregar pedidos…</p>
+        <p id="orders-error" class="form-error" role="alert"></p>
+        <div id="orders" class="admin-list"></div>
+        <button id="orders-more" class="btn btn-secondary" type="button" hidden>Carregar mais</button>
+      </section>
+      <section id="plan-list" class="admin-panel" aria-labelledby="plans-title">
+        <h2 id="plans-title">Planos</h2>
+        <p id="plans-loading" class="admin-loading" role="status" hidden>A carregar planos…</p>
+        <p id="plans-error" class="form-error" role="alert"></p>
+        <div id="plans" class="admin-list"></div>
+      </section>
+      <section id="charts-panel" class="admin-panel" aria-labelledby="charts-title">
+        <h2 id="charts-title">Gráficos</h2>
+        <div class="chart-grid">
+          <article class="card chart-card"><h3>Pedidos ao longo do tempo</h3><div class="chart-frame"><canvas id="orders-time-chart" aria-label="Pedidos por mês" role="img"></canvas></div></article>
+          <article class="card chart-card"><h3>Distribuição por estado</h3><div class="chart-frame chart-frame-small"><canvas id="orders-status-chart" aria-label="Pedidos por estado" role="img"></canvas></div></article>
+          <article class="card chart-card"><h3>Distribuição por plano</h3><div class="chart-frame"><canvas id="orders-plan-chart" aria-label="Pedidos por plano" role="img"></canvas></div></article>
+          <article class="card chart-card"><h3>Distribuição por tipo de negócio</h3><div class="chart-frame"><canvas id="orders-business-chart" aria-label="Pedidos por tipo de negócio" role="img"></canvas></div></article>
+          <article class="card chart-card chart-card-wide"><h3>Receita estimada por mês</h3><p class="chart-note">Estimativa baseada no preço do plano associado a pedidos fechados — não reflete pagamentos reais registados.</p><div class="chart-frame"><canvas id="revenue-chart" aria-label="Receita estimada por mês" role="img"></canvas></div></article>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

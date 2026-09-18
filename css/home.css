@@ -1,0 +1,62 @@
+.hero { position: relative; overflow: hidden; padding: 150px 0 90px; min-height: 720px; }
+.hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; filter: blur(4px); opacity: .55; pointer-events: none; animation: drift 12s ease-in-out infinite alternate; }
+.hero::before { width: 360px; height: 360px; right: -110px; top: 80px; background: #c3e6ff; }
+.hero::after { width: 260px; height: 260px; left: -100px; bottom: 40px; background: #bdf2e6; animation-delay: -4s; }
+.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr .85fr; align-items: center; gap: 48px; }
+.hero-copy > p { font-size: 1.1rem; max-width: 560px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0; }
+.rotating-line { display: block; min-height: 1.4em; color: var(--blue); }
+.rotating-line.is-changing { animation: slide-fade .4s ease; }
+.mockup { position: relative; min-height: 420px; }
+.browser { position: absolute; left: 0; top: 20px; width: 88%; height: 280px; background: white; border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; transform: rotate(-3deg); }
+.browser-bar { height: 32px; background: #ecece8; padding: 9px; display: flex; gap: 5px; }
+.browser-bar i { display: block; width: 7px; height: 7px; border-radius: 50%; background: #ff756d; }
+.browser-content { padding: 22px; display: grid; gap: 12px; }
+.mock-line { width: 65%; height: 14px; border-radius: 9px; background: var(--gradient); }
+.mock-line.short { width: 35%; height: 8px; background: #e5e5e0; }
+.mock-block { height: 90px; border-radius: 12px; background: linear-gradient(135deg,#eaf0ff,#d8f7ef); }
+.phone { position: absolute; right: 0; bottom: 5px; width: 150px; height: 290px; border: 8px solid var(--text); border-radius: 25px; background: white; box-shadow: var(--shadow); padding: 28px 12px 12px; transform: rotate(5deg); }
+.phone::before { content: ""; position: absolute; top: 10px; left: 50px; width: 42px; height: 5px; border-radius: 5px; background: var(--text); }
+.service-grid, .plan-grid, .example-grid, .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.service-card, .plan-card, .example-card, .value-card { padding: 24px; }
+.service-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; color: white; background: var(--gradient); margin-bottom: 22px; }
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; counter-reset: step; }
+.step { padding: 18px 10px; border-top: 2px solid var(--blue); position: relative; }
+.step strong { display: block; font-family: "Space Grotesk"; font-size: 1.05rem; }
+.example-visual { height: 170px; border-radius: 12px; background: linear-gradient(135deg,#d8e2ff,#ccf4e9); margin-bottom: 20px; display: grid; place-items: center; font-size: 2.5rem; overflow: hidden; }
+.example-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.filter.is-active { color: white; background: var(--blue); }
+.plan-card { position: relative; }
+.plan-card.featured { border: 2px solid var(--blue); transform: translateY(-8px); }
+.plan-price { font: 700 2.3rem "Space Grotesk"; margin: 24px 0; }
+.plan-price small { font: 400 .9rem Inter; color: var(--muted); }
+.plan-card ul { padding-left: 18px; color: var(--muted); min-height: 150px; }
+.compare-wrap { overflow-x: auto; margin-top: 30px; }
+.compare { border-collapse: collapse; width: 100%; min-width: 700px; background: white; }
+.compare th, .compare td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; }
+.faq { max-width: 800px; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item button { width: 100%; padding: 20px 0; display: flex; justify-content: space-between; border: 0; background: transparent; font-weight: 700; text-align: left; cursor: pointer; }
+.faq-answer { display: none; padding: 0 0 16px; }
+.faq-item.is-open .faq-answer { display: block; }
+.contact-grid { display: grid; grid-template-columns: 1.1fr .75fr; gap: 28px; align-items: start; }
+.contact-form { padding: 26px; display: grid; gap: 15px; }
+.contact-links { display: grid; gap: 14px; }
+.contact-link { padding: 20px; text-decoration: none; }
+.contact-link strong { display: block; margin-bottom: 3px; }
+.site-footer { padding: 44px 0 100px; border-top: 1px solid var(--line); }
+.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 28px; }
+.footer-links { display: grid; gap: 8px; }
+.footer-links a { color: var(--muted); text-decoration: none; }
+.cookie { position: fixed; left: 16px; bottom: 16px; z-index: 30; max-width: 380px; padding: 16px; background: white; border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
+.notice-bar { position: fixed; left: 50%; bottom: 16px; z-index: 25; width: min(720px, calc(100% - 32px)); transform: translate(-50%, 150%); transition: transform .35s ease; padding: 12px 14px; display: flex; align-items: center; gap: 12px; background: var(--text); color: white; border-radius: 12px; box-shadow: var(--shadow); }
+.notice-bar.is-visible { transform: translate(-50%, 0); }
+.notice-bar .rotating-line { flex: 1; color: white; font-size: .9rem; }
+.whatsapp-float, .top-button { position: fixed; z-index: 24; right: 18px; bottom: 18px; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; color: white; background: #1caa78; text-decoration: none; box-shadow: var(--shadow); }
+.top-button { right: 18px; bottom: 76px; background: var(--text); border: 0; cursor: pointer; }
+.confirmation { padding: 38px 20px; text-align: center; }
+@keyframes drift { to { transform: translate(35px, -25px) scale(1.08); } }
+@keyframes slide-fade { 0% { opacity: 0; transform: translateY(8px); } 100% { opacity: 1; transform: none; } }
+@media (max-width: 820px) { .hero-grid, .contact-grid { grid-template-columns: 1fr; } .hero { min-height: auto; } .mockup { min-height: 340px; } .service-grid, .plan-grid, .example-grid, .value-grid { grid-template-columns: 1fr; } .plan-card.featured { transform: none; } .steps { grid-template-columns: 1fr 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .hero { padding-top: 124px; } .browser { width: 90%; } .phone { width: 125px; height: 250px; } .steps, .footer-grid { grid-template-columns: 1fr; } .notice-bar { bottom: 78px; } .whatsapp-float { bottom: 18px; } .top-button { bottom: 76px; } }
