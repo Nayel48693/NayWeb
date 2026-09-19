@@ -1,14 +1,14 @@
 export const defaults = {
   configuracoes: {
     mensagensHero: ["O teu negócio merece estar online.", "Queres atrair mais clientes?", "Marcações 24h, sem atender chamadas.", "Site, alojamento e manutenção — tudo incluído.", "Rápido, simples e sem dores de cabeça."],
-    mensagensBarra: ["Planos desde 39€/mês — alojamento incluído", "Queres marcações online no teu negócio?", "Fala connosco no WhatsApp", "Pede já o teu orçamento"],
+    mensagensBarra: ["Planos desde 19,99€/mês — alojamento incluído", "Queres marcações online no teu negócio?", "Fala connosco no WhatsApp", "Pede já o teu orçamento"],
     intervaloMs: 3000,
     whatsapp: "351931893274", email: "anilanderm@gmail.com", telefone: "+351 931 893 274", instagram: "", facebook: ""
   },
   planos: [
-    { id: "start", nome: "Start", preco: 39, periodo: "mês", descricao: "Para começar com uma presença clara e profissional.", funcionalidades: ["Site simples (uma página)", "Alojamento incluído", "1 alteração por mês"], destaque: false, alteracoesPorMes: 1, ordem: 1, ativo: true },
-    { id: "business", nome: "Business", preco: 69, periodo: "mês", descricao: "Tudo o que um negócio local precisa para crescer online.", funcionalidades: ["Site completo", "Alojamento incluído", "Botão de WhatsApp", "Galeria de fotos", "Google Maps", "3 alterações por mês"], destaque: true, alteracoesPorMes: 3, ordem: 2, ativo: true },
-    { id: "pro", nome: "Pro", preco: 99, periodo: "mês", descricao: "Uma experiência mais completa, com marcações online.", funcionalidades: ["Tudo do Business", "Sistema de marcações", "Área administrativa", "6 alterações por mês", "Estatísticas básicas"], destaque: false, alteracoesPorMes: 6, ordem: 3, ativo: true }
+    { id: "start", nome: "Start", preco: 19.99, precoCriacao: 149.99, periodo: "mês", descricao: "Para começar com uma presença clara e profissional.", funcionalidades: ["Site simples (uma página)", "Alojamento incluído", "1 alteração por mês"], destaque: false, alteracoesPorMes: 1, ordem: 1, ativo: true },
+    { id: "business", nome: "Business", preco: 29.99, precoCriacao: 299.99, periodo: "mês", descricao: "Tudo o que um negócio local precisa para crescer online.", funcionalidades: ["Site completo", "Alojamento incluído", "Botão de WhatsApp", "Galeria de fotos", "Google Maps", "3 alterações por mês"], destaque: true, alteracoesPorMes: 3, ordem: 2, ativo: true },
+    { id: "pro", nome: "Pro", preco: 49.99, precoCriacao: 499.99, periodo: "mês", descricao: "Uma experiência mais completa, com marcações online.", funcionalidades: ["Tudo do Business", "Sistema de marcações", "Área administrativa", "6 alterações por mês", "Estatísticas básicas"], destaque: false, alteracoesPorMes: 6, ordem: 3, ativo: true }
   ],
   exemplos: [
     { id: "barbearia", titulo: "Barbearia urbana", categoria: "barbearia", descricao: "Uma presença forte para serviços com marcação.", demoUrl: "demo-barbearia.html", imagem: "https://images.unsplash.com/photo-1672642150228-3fcd5826ec26?auto=format&fit=crop&w=800&q=80", imagemUrl: "", tags: ["Marcações", "WhatsApp"], ordem: 1, ativo: true },

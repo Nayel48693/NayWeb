@@ -29,6 +29,7 @@
 .filter.is-active { color: white; background: var(--blue); }
 .plan-card { position: relative; }
 .plan-card.featured { border: 2px solid var(--blue); transform: translateY(-8px); }
+.plan-setup { font: 600 .85rem Inter; color: var(--muted); margin-bottom: 4px; }
 .plan-price { font: 700 2.3rem "Space Grotesk"; margin: 24px 0; }
 .plan-price small { font: 400 .9rem Inter; color: var(--muted); }
 .plan-card ul { padding-left: 18px; color: var(--muted); min-height: 150px; }
