@@ -42,5 +42,12 @@ service cloud.firestore {
       allow read: if true;
       allow write: if isAdmin();
     }
+    match /estatisticas/visitas {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['total']) && request.resource.data.total == 1;
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['total'])
+        && request.resource.data.total == resource.data.total + 1;
+      allow delete: if isAdmin();
+    }
   }
 }

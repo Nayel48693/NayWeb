@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, getDocs, addDoc, serverTimestamp, doc, getDoc, setDoc, updateDoc, deleteDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getFirestore, collection, getDocs, addDoc, serverTimestamp, doc, getDoc, setDoc, updateDoc, deleteDoc, onSnapshot, query, orderBy, increment } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 
@@ -19,4 +19,4 @@ try {
 	auth = getAuth(app);
 	isSupported().then((supported) => { if (supported) analytics = getAnalytics(app); }).catch(() => {});
 } catch (error) { console.warn("Firebase indisponível; a aplicação usa defaults.", error); }
-export { db, auth, analytics, collection, getDocs, addDoc, serverTimestamp, doc, getDoc, setDoc, updateDoc, deleteDoc, onSnapshot, query, orderBy, signInWithEmailAndPassword, signOut, onAuthStateChanged };
+export { db, auth, analytics, collection, getDocs, addDoc, serverTimestamp, doc, getDoc, setDoc, updateDoc, deleteDoc, onSnapshot, query, orderBy, increment, signInWithEmailAndPassword, signOut, onAuthStateChanged };
